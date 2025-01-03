@@ -1,0 +1,64 @@
+auth-service/
+├── cmd/
+│   └── main.go
+├── internal/
+│   ├── config/
+│   │   └── config.go
+│   ├── domain/
+│   │   ├── entity/
+│   │   │   ├── user.go
+│   │   │   ├── role.go
+│   │   │   ├── permission.go
+│   │   │   ├── subscription.go
+│   │   │   ├── audit_log.go
+│   │   │   └── security_log.go
+│   │   ├── oauth/
+│   │   │   └── provider.go
+│   │   ├── repository/
+│   │   │   └── interfaces.go
+│   │   └── validator/
+│   │       └── user_validator.go
+│   ├── handlers/
+│   │   ├── auth_handlers.go
+│   │   ├── user_handlers.go
+│   │   ├── security_handlers.go
+│   │   └── monitoring_handlers.go
+│   ├── infrastructure/
+│   │   ├── cache/
+│   │   │   └── redis.go
+│   │   └── database/
+│   │       └── postgres.go
+│   ├── middleware/
+│   │   ├── jwt.go
+│   │   ├── rbac.go
+│   │   ├── rate_limit.go
+│   │   └── request_metrics.go
+│   ├── repository/
+│   │   ├── gorm_user.go
+│   │   ├── gorm_audit.go
+│   │   ├── gorm_security.go
+│   │   └── redis_session.go
+│   └── service/
+│       ├── auth_service.go
+│       ├── email_service.go
+│       ├── totp_service.go
+│       ├── security_service.go
+│       └── monitoring_service.go
+├── pkg/
+│   └── security/
+│       ├── jwt.go
+│       └── password.go
+├── migrations/
+│   ├── 000001_create_users_table.up.sql
+│   ├── 000001_create_users_table.down.sql
+│   ├── 000002_create_audit_logs_table.up.sql
+│   ├── 000002_create_audit_logs_table.down.sql
+│   ├── 000003_create_security_logs_table.up.sql
+│   └── 000003_create_security_logs_table.down.sql
+├── .env
+├── .env.example
+├── .gitignore
+├── docker-compose.yml
+├── Dockerfile
+├── go.mod
+└── go.sum
